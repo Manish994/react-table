@@ -108,6 +108,7 @@ class App extends Component {
       <div className="App">
         <DataTable
           //here props are passed into datatable -- classname, title, pagination, width,...
+          className="data-table"
           title="USER PROFILES"
           keyField="id"
           edit={true}
