@@ -55,10 +55,71 @@ class App extends Component {
           },
         },
       ],
+
+      data: [
+        {
+          id: 1,
+          name: "a",
+          age: 29,
+          qualification: "B.Tech",
+          rating: 2,
+          profile:
+            "https://www.facebook.com/Vedicfacts/photos/char-dham-(four-cornered-holy/540428692736297/",
+        },
+        {
+          id: 2,
+          name: "b",
+          age: 10,
+          qualification: "M.Tech",
+          rating: 4,
+          profile:
+            "https://www.facebook.com/Vedicfacts/photos/char-dham-(four-cornered-holy/540428692736297/",
+        },
+        {
+          id: 3,
+          name: "c",
+          age: 54,
+          qualification: "MSC",
+          rating: 3,
+          profile:
+            "https://www.facebook.com/Vedicfacts/photos/char-dham-(four-cornered-holy/540428692736297/",
+        },
+      ],
     };
+
+    for (var i = 4; i <= 20; i++) {
+      model.data.push({
+        id: i,
+        name: "name" + i,
+        age: i + 14,
+        qualification: "Graduate" + i,
+        rating: i % 2 ? 3 : 4,
+        profile:
+          "https://www.facebook.com/Vedicfacts/photos/char-dham-(four-cornered-holy/540428692736297/",
+      });
+    }
+
+    this.state = model;
   }
   render() {
-    return <div className="App"></div>;
+    return (
+      <div className="App">
+        <DataTable
+          className="data-table"
+          title="USER PROFILES"
+          keyField="id"
+          pagination={{
+            enabled: true,
+            pageLength: 5,
+            type: "long", // long, short
+          }}
+          width="100%"
+          headers={this.state.headers}
+          data={this.state.DataTable}
+          noData="No Records!"
+        ></DataTable>
+      </div>
+    );
   }
 }
 
