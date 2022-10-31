@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import DataTable from "./Components/DataTable";
 
 class App extends Component {
   constructor(props) {
@@ -99,15 +100,17 @@ class App extends Component {
       });
     }
 
+    // set model into state
     this.state = model;
   }
   render() {
     return (
       <div className="App">
         <DataTable
-          className="data-table"
+          //here props are passed into datatable -- classname, title, pagination, width,...
           title="USER PROFILES"
           keyField="id"
+          edit={true}
           pagination={{
             enabled: true,
             pageLength: 5,
@@ -115,8 +118,8 @@ class App extends Component {
           }}
           width="100%"
           headers={this.state.headers}
-          data={this.state.DataTable}
-          noData="No Records!"
+          data={this.state.data}
+          noData="No records!"
         ></DataTable>
       </div>
     );
