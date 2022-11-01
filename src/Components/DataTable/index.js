@@ -47,14 +47,35 @@ export default class DataTable extends React.Component {
     return headerView;
   };
 
+  renderNoData = () => {
+    return (
+      <tr>
+        <td colSpan={this.state.headers.length}>{this.noData}</td>
+      </tr>
+    );
+  };
+
+  renderContent = () => {
+    return (
+      <tr>
+        <td colSpan={this.state.headers.length}>Record goes here</td>
+      </tr>
+    );
+  };
+
   renderTable = () => {
     let title = this.props.title || "Data-Table";
     let headerView = this.renderTableHeader();
-    let contentView = "Content goes here";
+    let contentView =
+      this.state.data.length > 0 ? this.renderContent() : this.renderNoData();
 
     return (
       <table className="data-inner-table">
         <caption className="data-table-caption">{title}</caption>
+        <thead>
+          <tr>{headerView}</tr>
+        </thead>
+        <tbody>{contentView}</tbody>
       </table>
     );
   };
