@@ -64,7 +64,8 @@ class App extends Component {
           age: 29,
           qualification: "B.Tech",
           rating: 2,
-          profile: "https://unsplash.com/photos/jbcY_yvsDzk",
+          profile:
+            "https://cdn.pixabay.com/photo/2021/12/14/16/15/city-6870803_960_720.jpg",
         },
         {
           id: 2,
@@ -72,7 +73,8 @@ class App extends Component {
           age: 10,
           qualification: "M.Tech",
           rating: 4,
-          profile: "https://unsplash.com/photos/jbcY_yvsDzk",
+          profile:
+            "https://cdn.pixabay.com/photo/2021/12/14/16/15/city-6870803_960_720.jpg",
         },
         {
           id: 3,
@@ -80,7 +82,8 @@ class App extends Component {
           age: 54,
           qualification: "MSC",
           rating: 3,
-          profile: "https://unsplash.com/photos/jbcY_yvsDzk",
+          profile:
+            "https://cdn.pixabay.com/photo/2021/12/14/16/15/city-6870803_960_720.jpg",
         },
       ],
     };
@@ -92,7 +95,8 @@ class App extends Component {
         age: i + 14,
         qualification: "Graduate" + i,
         rating: i % 2 ? 3 : 4,
-        profile: "https://unsplash.com/photos/jbcY_yvsDzk",
+        profile:
+          "https://cdn.pixabay.com/photo/2021/12/14/16/15/city-6870803_960_720.jpg",
       });
     }
 
