@@ -56,11 +56,36 @@ export default class DataTable extends React.Component {
   };
 
   renderContent = () => {
-    return (
-      <tr>
-        <td colSpan={this.state.headers.length}>Record goes here</td>
-      </tr>
-    );
+    let { headers, data } = this.state;
+    let conentView = data.map((row, rowIdx) => {
+      let id = row[this.keyField];
+
+      let tds = headers.map((header, headerIdx) => {
+        let content = row[header.accessor];
+        let cell = header.cell;
+
+        if (cell) {
+          if (typeof cell === "object") {
+            if (cell.type === "image" && content) {
+              content = (
+                <img style={cell.style} src={content} alt="loading"></img>
+              );
+            }
+          } else if (typeof cell === "function") {
+            cell(content);
+          }
+        }
+
+        return (
+          <td key={headerIdx} data-id={id} data-row={rowIdx}>
+            {content}
+          </td>
+        );
+      });
+      return <tr key={id}>{tds}</tr>;
+    });
+
+    return conentView;
   };
 
   renderTable = () => {

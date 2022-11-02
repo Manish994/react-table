@@ -64,8 +64,7 @@ class App extends Component {
           age: 29,
           qualification: "B.Tech",
           rating: 2,
-          profile:
-            "https://www.facebook.com/Vedicfacts/photos/char-dham-(four-cornered-holy/540428692736297/",
+          profile: "https://unsplash.com/photos/jbcY_yvsDzk",
         },
         {
           id: 2,
@@ -73,8 +72,7 @@ class App extends Component {
           age: 10,
           qualification: "M.Tech",
           rating: 4,
-          profile:
-            "https://www.facebook.com/Vedicfacts/photos/char-dham-(four-cornered-holy/540428692736297/",
+          profile: "https://unsplash.com/photos/jbcY_yvsDzk",
         },
         {
           id: 3,
@@ -82,8 +80,7 @@ class App extends Component {
           age: 54,
           qualification: "MSC",
           rating: 3,
-          profile:
-            "https://www.facebook.com/Vedicfacts/photos/char-dham-(four-cornered-holy/540428692736297/",
+          profile: "https://unsplash.com/photos/jbcY_yvsDzk",
         },
       ],
     };
@@ -95,8 +92,7 @@ class App extends Component {
         age: i + 14,
         qualification: "Graduate" + i,
         rating: i % 2 ? 3 : 4,
-        profile:
-          "https://www.facebook.com/Vedicfacts/photos/char-dham-(four-cornered-holy/540428692736297/",
+        profile: "https://unsplash.com/photos/jbcY_yvsDzk",
       });
     }
 
