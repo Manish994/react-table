@@ -72,7 +72,7 @@ export default class DataTable extends React.Component {
               );
             }
           } else if (typeof cell === "function") {
-            cell(content);
+            content = cell(content);
           }
         }
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import DataTable from "./Components/DataTable";
+import "./Components/DataTable/datatable.css";
 
 class App extends Component {
   constructor(props) {
@@ -39,21 +40,21 @@ class App extends Component {
           accessor: "rating",
           width: 200,
           index: 5,
-          cell: (row) => {
+          cell: (row) => (
             <div className="rating">
               <div
                 styles={{
                   backgroundColor: "lightskyblue",
                   textAlign: "center",
-                  height: "1.9rem",
+                  height: "1.9em",
                   width: (row / 5) * 201 + "px",
                   margin: "3px 0 4px 0",
                 }}
               >
                 {row}
               </div>
-            </div>;
-          },
+            </div>
+          ),
         },
       ],
 
